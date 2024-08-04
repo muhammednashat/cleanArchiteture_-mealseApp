@@ -6,7 +6,7 @@ import com.mnashat.dev.domain.repo.MealsRepo
 import java.security.KeyStore.PrivateKeyEntry
 
 class RepoImpl (private val apiService: ApiService):MealsRepo{
-    override fun getMealsFromRemote(): CategoriesResponse {
+    override suspend fun getMealsFromRemote(): CategoriesResponse {
          return apiService.getMeals()
     }
 
