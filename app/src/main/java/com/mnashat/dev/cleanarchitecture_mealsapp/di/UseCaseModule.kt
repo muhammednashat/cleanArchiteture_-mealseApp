@@ -8,12 +8,14 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
 object UseCaseModule {
 
-     @Provides
-     @Singleton
-    fun provideGetMeals( mealsRepo: MealsRepo) = GetMeals(mealsRepo)
-
+    @Provides
+    @Singleton
+    fun provideGetMealsUseCase(mealsRepo: MealsRepo):GetMeals{
+      return  GetMeals(mealsRepo)
+    }
 }
